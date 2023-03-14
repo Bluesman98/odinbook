@@ -1,0 +1,98 @@
+.Post{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.Post>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.Post>div>.title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.Post>div>.date{
+    display: flex;
+    flex-direction: column;
+   align-items: flex-end;
+    font-size: .8rem;
+}
+
+.Post>div>.date>svg{
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.Post>div>.date:hover{
+cursor: pointer;
+}
+
+.Post>.content{
+    padding: 1rem;
+    margin-bottom: .5rem;
+}
+
+.Post>.comments{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.Post >* .author{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.details{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Post >* .likes>svg{
+    color: purple;
+    font-size: 1.2rem;
+}
+
+.Post>.button-container{
+    border-top: .1rem solid rgb(185, 184, 184);
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+ 
+    font-size: 1.1rem;
+    display: flex;
+    gap: 4rem;
+    padding: 0 4rem ;
+    padding-top: .7rem; 
+}
+
+.Post>.button-container>div{
+   cursor: pointer;
+   color: rgb(104, 103, 103);
+}
+
+.like{
+    color: gray;
+}
+
+.like.solid{
+    color: purple !important;
+}
+
+
+
+
+
+

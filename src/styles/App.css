@@ -1,0 +1,122 @@
+html, body{
+  height: 100%;
+}
+
+.App > *{
+  padding-top: 6rem;
+}
+
+.header{
+  position: fixed;
+  grid-row: 0/1;
+  width: 100%;
+  height: 5rem;
+  background-color: #0284c7;
+  padding-top: 0 !important;
+}
+.header>div>div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-form{
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-form>input{
+  width: 100%;
+}
+
+.comment-form>button{
+  width: 10rem;
+  padding: .1rem 0;
+}
+
+.post-form{
+  display: flex;
+  flex-direction: column;
+  gap:.2rem;
+}
+
+.post-form >input{
+  font-size: 2rem;
+}
+
+.Posts{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-img{
+border-radius: 50%;
+aspect-ratio: 1;
+height: 3rem;
+}
+
+.post-modal-content>div{
+  display: flex;
+  flex-direction: column;
+  min-width: 30rem;
+  width: fit-content;
+  gap: .5rem;
+}
+
+.post-modal-content>div>div:first-child{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.post-modal-content>div>form{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.post-modal-content>div>form>textarea{
+  font-size: 1.3rem;
+  resize: none;
+  white-space: pre-wrap;
+  min-height: 5rem;
+  height: fit-content;
+  border: none;
+}
+
+.post-modal-content>div>form>button{
+  font-size: 1rem;
+
+}
+
+.Profile>div, .MyProfile>div{
+  padding-left: 2rem;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button{
+  border: none !important;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 1rem !important;
+  background-color: #1d4ed8;
+  padding: .2rem .5rem !important;
+  color: white;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #1142ac;
+}
+
+

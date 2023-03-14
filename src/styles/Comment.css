@@ -1,0 +1,63 @@
+.Comment {
+  padding-bottom: 1rem;
+
+}
+
+.Comment > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+  font-size: 80%;
+}
+
+.Comment *.date {
+  display: flex;
+  gap: 1rem;
+}
+
+.Comment > * img {
+  height: 1.8rem !important;
+}
+
+.Comment > div > .author {
+  gap: 0.5rem !important;
+  align-items: center;
+}
+
+.content {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.comment-form {
+    padding-top: .7rem;
+    border-top: 0.1rem rgb(171, 169, 169) solid;
+ }
+ 
+
+.comment-form > input{
+   outline: none;
+   border: none;
+}
+
+.comment-form > button{
+    height: fit-content;
+    width: fit-content;
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.comment-form > button>svg{
+    font-size: 1.2rem;
+    color: rgb(48, 121, 240);
+}
+
+.comment-form > button>svg:hover{
+    font-size: 1.2rem;
+    color: rgb(49, 108, 205);
+}

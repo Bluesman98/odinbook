@@ -1,0 +1,46 @@
+.request-resolve{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.request-resolve>button{
+   height: fit-content;
+}
+
+.avatar{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar > img{
+   height: 7rem;
+   width: 7rem;
+   border-radius: 50%;
+}
+
+.avatar > * img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+ }
+
+.avatar>div{
+    display: flex;
+}
+
+.avatar>* svg{
+    font-size: 1.1rem;
+}
+
+.avatar>* svg:hover{
+   cursor: pointer;
+}
+
+button{
+    font-size: 1.1rem;
+    padding: .1rem 0.5rem;
+    border-radius: 2px;
+    border: 1px solid;
+}

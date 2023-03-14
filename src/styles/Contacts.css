@@ -1,0 +1,48 @@
+.Contacts{
+    grid-column: 2/3;
+    position: fixed;
+    padding-right: 5rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+.Contacts>div:first-child{
+    align-self: start;
+    cursor: auto;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.Contacts>div{
+    cursor: pointer;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.user > img{
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 3rem;
+}
+
+.Contacts>* .alert{
+    font-size: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    height: .7rem;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    padding: .2rem;
+    font-weight: 500;
+}

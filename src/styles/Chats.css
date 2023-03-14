@@ -1,0 +1,128 @@
+.Chats {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    justify-content: flex-end;
+    gap: .6rem;
+    padding-right: 7rem;
+}
+
+.Chat {
+    height: 28rem;
+    width: 20rem;
+    border-top: .2rem solid #0284c7;
+    border-radius: 3px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.Chat > .top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #0284c7;
+    padding: .2rem .4rem;
+    color: white;
+}
+
+.Chat > .top > svg{
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.Chat> * .user{
+    display: flex;
+}
+
+.Chat> * .user> .profile-img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.Chat> * .user>div{
+margin-bottom: auto;
+font-weight: 400;
+}
+
+.Chat > .content{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    padding: .5rem 1rem .5rem 2rem;
+    overflow-x: scroll;
+}
+
+.message-container{
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+}
+
+.message-container>.date{
+    font-size: .8rem;
+    color: white;
+}
+
+.message-container>.date.user{
+align-self: flex-end;
+}
+
+.text:hover+.date{
+   color: black;
+   transition-delay:.5s;
+}
+
+
+
+.text{
+    padding: 18px;
+    padding: .5rem .85rem;
+    background-color:#e5e7eb;
+    border-radius: 15px;
+    word-wrap: break-word;
+    width: fit-content;
+    max-width: 70%;
+}
+
+.text.user{
+    background-color: #0284c7;
+    color: white;
+    border-radius: 15px;
+    align-self: flex-end;
+}
+
+.text>div{
+        word-wrap: break-word;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.Chat>.bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .2rem .3rem .5rem .3rem;
+}
+
+.Chat>.bottom>form{
+flex:1;
+}
+
+.Chat>.bottom>form>input{
+    font-size: 1.1rem;
+    }
+
+    .Chat>.bottom>* svg{
+        font-size: 1.3rem !important;
+        margin-right: .5rem;
+        }
+

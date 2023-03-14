@@ -1,0 +1,25 @@
+.login-form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 30%;
+    gap: .5rem
+}
+
+input{
+    font-size: 1rem;
+}
+
+.sign-up{
+    background-color: #16a34a;
+}
+
+.sign-up:hover{
+    background-color: #1c9247;
+}
+
+.example{
+   background-color: #f59e0b
+}
+.example:hover{
+    background-color: #d99014
+ }

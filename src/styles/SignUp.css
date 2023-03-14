@@ -1,0 +1,6 @@
+.sign-up-form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 30%;
+    gap: .5rem
+}
