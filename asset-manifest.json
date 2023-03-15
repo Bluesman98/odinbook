@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/%7Bodinbook%7D/static/css/main.b87bacf0.css",
+    "main.js": "/%7Bodinbook%7D/static/js/main.8caf1895.js",
+    "index.html": "/%7Bodinbook%7D/index.html",
+    "main.b87bacf0.css.map": "/%7Bodinbook%7D/static/css/main.b87bacf0.css.map",
+    "main.8caf1895.js.map": "/%7Bodinbook%7D/static/js/main.8caf1895.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b87bacf0.css",
+    "static/js/main.8caf1895.js"
+  ]
+}
