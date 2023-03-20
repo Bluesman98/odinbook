@@ -56,7 +56,7 @@ function HeaderContent(props) {
 
   async function search(query) {
     try {
-      await fetch(`http://localhost:3000/search?query=${query}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/search?query=${query}`)
         .then((res) => {
           return res.json();
         })
@@ -69,7 +69,7 @@ function HeaderContent(props) {
   async function getUserFriendRequests() {
     try {
       await fetch(
-        `http://localhost:3000/user/${props.user._id}/friend-requests`
+        `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-requests`
       )
         .then((res) => {
           return res.json();
@@ -82,7 +82,7 @@ function HeaderContent(props) {
 
   async function resolveFriendRequest(id, accept) {
     await fetch(
-      `http://localhost:3000/user/${props.user._id}/friend-request/resolve?user_id=${id}&accept=${accept}`,
+      `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-request/resolve?user_id=${id}&accept=${accept}`,
       {
         method: "PUT",
       }

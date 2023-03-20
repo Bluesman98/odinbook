@@ -6,7 +6,7 @@ function Comment(props) {
   const [author, setAuthor] = useState(null);
   async function fetchAuthor() {
     await fetch(
-      `http://localhost:3000/user/${props.comment.author_id}/details`
+      `${process.env. REACT_APP_API_URL}/user/${props.comment.author_id}/details`
     )
       .then((res) => {
         return res.json();

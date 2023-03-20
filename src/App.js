@@ -26,13 +26,14 @@ function App() {
 
   async function signIn(username, password) {
     try {
-      await fetch("http://localhost:3000/sign-in", {
+      await fetch(`${process.env. REACT_APP_API_URL}/sign-in`, {
         method: "POST",
+        mode: "cors",
+        headers: { "content-type": "application/json" },
         body: JSON.stringify({
           username: username,
           password: password,
         }),
-        headers: { "content-type": "application/json" },
       })
         .then((res) => {
           return res.json();
@@ -46,8 +47,10 @@ function App() {
 
   async function facebookLogin(response) {
     try {
-      await fetch(`http://localhost:3000/login/facebook`, {
+      await fetch(`${process.env. REACT_APP_API_URL}/login/facebook`, {
         method: "POST",
+        mode: "cors",
+        headers: { "content-type": "application/json" },
         body: JSON.stringify({
           first_name: response.first_name,
           last_name: response.last_name,
@@ -55,7 +58,6 @@ function App() {
           img_url: response.picture.data.url,
           id: response.id,
         }),
-        headers: { "content-type": "application/json" },
       })
         .then((res) => {
           return res.json();
@@ -71,7 +73,9 @@ function App() {
 
   async function updateUserData() {
     try {
-      await fetch(`http://localhost:3000/user/${user._id}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/user/${user._id}`,{
+        mode: "cors",
+      })
         .then((res) => {
           return res.json();
         })
@@ -84,7 +88,7 @@ function App() {
 
   async function getUserFriends() {
     try {
-      await fetch(`http://localhost:3000/user/${user._id}/friends`)
+      await fetch(`${process.env. REACT_APP_API_URL}/user/${user._id}/friends`)
         .then((res) => {
           return res.json();
         })
@@ -99,6 +103,7 @@ function App() {
   }
 
   useEffect(() => {
+    console.log(process.env. REACT_APP_API_URL)
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       //Update data

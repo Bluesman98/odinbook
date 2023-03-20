@@ -31,14 +31,12 @@ function Login(props) {
           type={"email"}
           placeholder="Email"
           name="email"
-          required
           onChange={(event) => setEmail(event.target.value)}
         ></input>
         <input
           type={"password"}
           placeholder="Password"
           name="password"
-          required
           onChange={(event) => setPassword(event.target.value)}
         ></input>
         <button className="login" type="submit">Login</button>

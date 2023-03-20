@@ -6,7 +6,7 @@ function CreateComment(props) {
   const [content, setContent] = useState("");
   async function postComment() {
     await fetch(
-      `http://localhost:3000/post/${props.post_id}/comment/create?author_id=${
+      `${process.env. REACT_APP_API_URL}/post/${props.post_id}/comment/create?author_id=${
         props.user._id
       }&author_name=${props.user.first_name + " " + props.user.last_name}`,
       {

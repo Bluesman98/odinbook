@@ -17,7 +17,7 @@ function Post(props) {
   const [isLiked, setIsLiked] = useState(false);
 
   async function fetchComments() {
-    await fetch(`http://localhost:3000/post/${props.post._id}/comments`)
+    await fetch(`${process.env. REACT_APP_API_URL}/post/${props.post._id}/comments`)
       .then((res) => {
         return res.json();
       })
@@ -27,7 +27,7 @@ function Post(props) {
   }
 
   async function fetchAuthor() {
-    await fetch(`http://localhost:3000/user/${props.post.author_id}/details`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${props.post.author_id}/details`)
       .then((res) => {
         return res.json();
       })
@@ -38,7 +38,7 @@ function Post(props) {
 
   async function likePost() {
     await fetch(
-      `http://localhost:3000/post/${props.post._id}/like?user_id=${props.user._id}`,
+      `${process.env. REACT_APP_API_URL}/post/${props.post._id}/like?user_id=${props.user._id}`,
       {
         method: "PUT",
       }
@@ -47,7 +47,7 @@ function Post(props) {
 
   async function unlikePost() {
     await fetch(
-      `http://localhost:3000/post/${props.post._id}/like-remove?user_id=${props.user._id}`,
+      `${process.env. REACT_APP_API_URL}/post/${props.post._id}/like-remove?user_id=${props.user._id}`,
       {
         method: "PUT",
       }

@@ -12,7 +12,7 @@ function ContactItem(props) {
   async function fetchChat(item) {
     try {
       await fetch(
-        `http://localhost:3000/chat/find?users=${props.user._id}&users=${item._id}`
+        `${process.env. REACT_APP_API_URL}/chat/find?users=${props.user._id}&users=${item._id}`
       )
         .then((res) => {
           return res.json();
@@ -32,7 +32,7 @@ function ContactItem(props) {
 
  async function markAllAsRead() {
     await fetch(
-      `http://localhost:3000/chat/${chat._id}/read-all?user_id=${props.user._id}`,
+      `${process.env. REACT_APP_API_URL}/chat/${chat._id}/read-all?user_id=${props.user._id}`,
       {
         method: "PUT",
       }

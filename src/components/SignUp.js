@@ -12,7 +12,7 @@ function SignUp(props) {
 
     async function signUp(){
       try{await fetch(
-        'http://localhost:3000/sign-up',
+        '${process.env. REACT_APP_API_URL}/sign-up',
         {
           method: "POST", 
           body:  JSON.stringify({

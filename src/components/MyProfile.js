@@ -49,7 +49,7 @@ function MyProfile(props) {
   }
 
   async function fetchPosts(user_id) {
-    await fetch(`http://localhost:3000/user/${user_id}/posts`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${user_id}/posts`)
       .then((res) => {
         return res.json();
       })
@@ -60,7 +60,7 @@ function MyProfile(props) {
 
   async function updateProfilePic(user_id){
       await fetch(
-        `http://localhost:3000/user/${user_id}/img_url/update?img_url=${imgUrl}`,
+        `${process.env. REACT_APP_API_URL}/user/${user_id}/img_url/update?img_url=${imgUrl}`,
         {
           method: "PUT",
         }
@@ -79,7 +79,7 @@ function MyProfile(props) {
 
   useEffect(() => {
     async function fetchUser() {
-      await fetch(`http://localhost:3000/user/${params.id}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/user/${params.id}`)
         .then((res) => {
           return res.json();
         })

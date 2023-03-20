@@ -8,7 +8,7 @@ function EditPost(props) {
 
   async function updatePost(content) {
     await fetch(
-      `http://localhost:3000/post/${props.post_id}/update?content=${content}`,
+      `${process.env. REACT_APP_API_URL}/post/${props.post_id}/update?content=${content}`,
       {
         method: "PUT",
       }
@@ -19,7 +19,7 @@ function EditPost(props) {
   }
 
   async function deletePost() {
-    await fetch(`http://localhost:3000/post/${props.post_id}/delete`, {
+    await fetch(`${process.env. REACT_APP_API_URL}/post/${props.post_id}/delete`, {
       method: "DELETE",
     });
     removePost(props.post_id);

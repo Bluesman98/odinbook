@@ -17,7 +17,7 @@ function Profile(props) {
   const socket = useContext(SocketContext);
 
   async function fetchPosts(user_id) {
-    await fetch(`http://localhost:3000/user/${user_id}/posts`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${user_id}/posts`)
       .then((res) => {
         return res.json();
       })
@@ -28,7 +28,7 @@ function Profile(props) {
 
   useEffect(() => {
     async function fetchUser() {
-      await fetch(`http://localhost:3000/user/${params.id}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/user/${params.id}`)
         .then((res) => {
           return res.json();
         })
@@ -64,7 +64,7 @@ function Profile(props) {
 
   async function sendFriendRequest(){
     await fetch(
-      `http://localhost:3000/user/${params.id}/friend-request?user_id=${props.user._id}`,
+      `${process.env. REACT_APP_API_URL}/user/${params.id}/friend-request?user_id=${props.user._id}`,
       {
         method: "PUT",
       }
@@ -75,7 +75,7 @@ function Profile(props) {
 
   async function resolveFriendRequest(accept){
     await fetch(
-      `http://localhost:3000/user/${props.user._id}/friend-request/resolve?user_id=${params.id}&accept=${accept}`,
+      `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-request/resolve?user_id=${params.id}&accept=${accept}`,
       {
         method: "PUT",
       }

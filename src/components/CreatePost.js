@@ -5,7 +5,7 @@ function CreatePost(props) {
 
   async function postBlogPost() {
     try {
-      await fetch(`http://localhost:3000/post/create?user=${props.user._id}`, {
+      await fetch(`${process.env. REACT_APP_API_URL}/post/create?user=${props.user._id}`, {
         method: "POST",
         body: JSON.stringify({
           content: content,

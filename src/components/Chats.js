@@ -15,7 +15,7 @@ function Chats(props) {
   async function joinRooms() {
     try {
       await fetch(
-        `http://localhost:3000/user/${props.user._id}/chats`
+        `${process.env. REACT_APP_API_URL}/user/${props.user._id}/chats`
       )
         .then((res) => {
           return res.json();

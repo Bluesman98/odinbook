@@ -32,7 +32,7 @@ function Timeline(props) {
   const params = useParams();
 
   async function fetchPosts() {
-    await fetch(`http://localhost:3000/user/${props.user._id}/timeline-posts`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${props.user._id}/timeline-posts`)
       .then((res) => {
         return res.json();
       })
