@@ -112,7 +112,7 @@ function Chat(props) {
       <div className="top">
         <div className="user">
           <img className="profile-img" src={props.data.img_url}></img>
-          <Link to={process.env.PUBLIC_URL + `/user/${props.data.id}/profile`}> {props.data.name} </Link>
+          <Link to={`/user/${props.data.id}/profile`}> {props.data.name} </Link>
         </div>
         <FontAwesomeIcon
           icon={faXmark}

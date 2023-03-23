@@ -124,11 +124,10 @@ function App() {
     
   }, [user]);
 
-  useEffect(() => {
+ useEffect(() => {
     updateUserData();
     setUpdateUser(false);
   }, [updateUser]);
-
   return (
     <div className="App">
       <div className="header">
@@ -143,7 +142,7 @@ function App() {
       <Chats setChatList={setChatList} chatList={chatList} user={user} />
       <Routes>
         <Route
-          path={process.env.PUBLIC_URL + "/"}
+          path={"/"}
           element={
             isAuthenticated ? (
               <Timeline
@@ -158,18 +157,18 @@ function App() {
           }
         />
         <Route
-          path={process.env.PUBLIC_URL + "/login"}
+          path={"/login"}
           element={
             <Login user={user} signIn={signIn} facebookLogin={facebookLogin} />
           }
         />
         <Route
-          path={process.env.PUBLIC_URL + "/sign-up"}
+          path={"/sign-up"}
           element={<SignUp user={user} signIn={signIn} />}
         />
         <Route
           user={user}
-          path={process.env.PUBLIC_URL + "/user/:id/profile"}
+          path={"/user/:id/profile"}
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
               <Profile user={user} setUpdateUser={setUpdateUser} />
@@ -177,7 +176,7 @@ function App() {
           }
         />
         <Route
-          path={process.env.PUBLIC_URL + "/search"}
+          path={"/search"}
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
               <SearchResults users={searchResult} />

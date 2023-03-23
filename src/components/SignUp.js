@@ -27,7 +27,7 @@ function SignUp(props) {
       .then(() => {
         props.signIn(email,password)
       })
-      navigate(process.env.PUBLIC_URL + "/")
+      navigate("/")
     }
       catch(error){
       }
@@ -39,7 +39,7 @@ function SignUp(props) {
         signUp()
       };
     
-    if(props.user) return <Navigate to={process.env.PUBLIC_URL + "/"}/>
+    if(props.user) return <Navigate to={"/"}/>
 
      return (
       <div className="SignUp">

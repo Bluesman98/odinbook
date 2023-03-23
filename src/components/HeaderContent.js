@@ -95,7 +95,7 @@ function HeaderContent(props) {
     event.target.reset();
     event.preventDefault(); // 👈️ prevent page refresh
     search(query);
-    navigate(process.env.PUBLIC_URL + `/search?query=${query}`);
+    navigate(`/search?query=${query}`);
     setQuery("");
     // 👇️ clear all input values in the form
   };
@@ -138,7 +138,7 @@ function HeaderContent(props) {
             <FontAwesomeIcon
               icon={faHouse}
               onClick={() => {
-                navigate(process.env.PUBLIC_URL + "/");
+                navigate("/");
               }}
             />
           </div>
@@ -159,7 +159,7 @@ function HeaderContent(props) {
               className="profile"
               onClick={() => {
                 navigate(
-                  process.env.PUBLIC_URL + `/user/${props.user._id}/profile`
+                  `/user/${props.user._id}/profile`
                 );
               }}
             >
@@ -195,7 +195,7 @@ function HeaderContent(props) {
                         src={item.img_url}
                         onClick={() => {
                           navigate(
-                            process.env.PUBLIC_URL + `/user/${item._id}/profile`
+                            `/user/${item._id}/profile`
                           );
                         }}
                       ></img>

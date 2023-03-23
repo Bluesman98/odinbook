@@ -63,7 +63,7 @@ function Timeline(props) {
   }
 
   if (props.user === null)
-    return <Navigate to={process.env.PUBLIC_URL + "/login"} />;
+    return <Navigate to={"/login"} />;
 
   return (
     <div className="Timeline">

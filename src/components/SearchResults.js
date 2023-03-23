@@ -11,7 +11,7 @@ function SearchResults(props) {
           return (
             <div
               onClick={() => {
-                navigate(process.env.PUBLIC_URL + `/user/${user._id}/profile`);
+                navigate(`/user/${user._id}/profile`);
               }}
             >
               <img src={user.img_url}></img>

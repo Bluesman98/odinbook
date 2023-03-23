@@ -22,7 +22,7 @@ function Login(props) {
     props.signIn(email, password);
   };
 
-  if (props.user) return <Navigate to={process.env.PUBLIC_URL + "/"} />;
+  if (props.user) return <Navigate to={"/"} />;
 
   return (
     <div className="Login">
@@ -51,7 +51,7 @@ function Login(props) {
                 <button className="example" onClick={() => { props.signIn("mithrandir@mage.com", "flyyoufools");}}>
           Login As Example User
         </button>
-        <button className="sign-up" onClick={() => {navigate(process.env.PUBLIC_URL + "/sign-up")}}>
+        <button className="sign-up" onClick={() => {navigate("/sign-up")}}>
           Create New Account
         </button>
       </form>
