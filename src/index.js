@@ -9,7 +9,7 @@ import {SocketContext, socket} from './components/socket';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/odibook">
     <SocketContext.Provider value={socket}>
     <App />
     </SocketContext.Provider>
