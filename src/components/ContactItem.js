@@ -12,7 +12,9 @@ function ContactItem(props) {
   async function fetchChat(item) {
     try {
       await fetch(
-        `${process.env. REACT_APP_API_URL}/chat/find?users=${props.user._id}&users=${item._id}`
+        `${process.env. REACT_APP_API_URL}/chat/find?users=${props.user._id}&users=${item._id}`,{
+          mode: "cors",
+        }
       )
         .then((res) => {
           return res.json();
@@ -27,7 +29,9 @@ function ContactItem(props) {
             );
           }
         });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   }
 
  async function markAllAsRead() {
@@ -35,6 +39,7 @@ function ContactItem(props) {
       `${process.env. REACT_APP_API_URL}/chat/${chat._id}/read-all?user_id=${props.user._id}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
   }

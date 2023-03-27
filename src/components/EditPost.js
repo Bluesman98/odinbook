@@ -11,6 +11,7 @@ function EditPost(props) {
       `${process.env. REACT_APP_API_URL}/post/${props.post_id}/update?content=${content}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
     updatePosts(props.post_id, content);
@@ -21,6 +22,7 @@ function EditPost(props) {
   async function deletePost() {
     await fetch(`${process.env. REACT_APP_API_URL}/post/${props.post_id}/delete`, {
       method: "DELETE",
+      mode: "cors",
     });
     removePost(props.post_id);
     props.closeModal();

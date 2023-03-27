@@ -7,6 +7,7 @@ function CreatePost(props) {
     try {
       await fetch(`${process.env. REACT_APP_API_URL}/post/create?user=${props.user._id}`, {
         method: "POST",
+        mode: "cors",
         body: JSON.stringify({
           content: content,
         }),

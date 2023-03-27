@@ -42,7 +42,9 @@ function App() {
           setUser(data);
           localStorage.setItem("user", JSON.stringify(data));
         });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async function facebookLogin(response) {
@@ -67,7 +69,6 @@ function App() {
           localStorage.setItem("user", JSON.stringify(data));
         });
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -83,7 +84,8 @@ function App() {
           setUser(data);
           localStorage.setItem("user", JSON.stringify(data));
         });
-    } catch (error) {}
+    } catch (error) {
+    }
   }
 
   async function getUserFriends() {
@@ -95,7 +97,8 @@ function App() {
         .then((data) => {
           setFriends(data);
         });
-    } catch (error) {}
+    } catch (error) {
+    }
   }
 
   function isInChatList(id) {

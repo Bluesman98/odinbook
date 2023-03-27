@@ -15,6 +15,7 @@ function SignUp(props) {
         '${process.env. REACT_APP_API_URL}/sign-up',
         {
           method: "POST", 
+          mode: "cors",
           body:  JSON.stringify({
             first_name: firstName,
             last_name: lastName,

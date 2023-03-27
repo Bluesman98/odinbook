@@ -11,6 +11,7 @@ function CreateComment(props) {
       }&author_name=${props.user.first_name + " " + props.user.last_name}`,
       {
         method: "POST",
+        mode: "cors",
         body: JSON.stringify({
           content: content,
         }),

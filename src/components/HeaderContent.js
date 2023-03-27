@@ -56,20 +56,25 @@ function HeaderContent(props) {
 
   async function search(query) {
     try {
-      await fetch(`${process.env. REACT_APP_API_URL}/search?query=${query}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/search?query=${query}`,{
+        mode: "cors",
+      })
         .then((res) => {
           return res.json();
         })
         .then((data) => {
           props.setSearchResult(data);
         });
-    } catch (error) {}
+    } catch (error) {
+    }
   }
 
   async function getUserFriendRequests() {
     try {
       await fetch(
-        `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-requests`
+        `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-requests`,{
+          mode: "cors",
+        }
       )
         .then((res) => {
           return res.json();
@@ -77,7 +82,8 @@ function HeaderContent(props) {
         .then((data) => {
           setFriendRequests(data);
         });
-    } catch (error) {}
+    } catch (error) {
+    }
   }
 
   async function resolveFriendRequest(id, accept) {
@@ -85,16 +91,17 @@ function HeaderContent(props) {
       `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-request/resolve?user_id=${id}&accept=${accept}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
     props.setUpdateUser(true);
     getUserFriendRequests();
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.target.reset();
     event.preventDefault(); // 👈️ prevent page refresh
-    search(query);
+   await search(query);
     navigate(`/search?query=${query}`);
     setQuery("");
     // 👇️ clear all input values in the form

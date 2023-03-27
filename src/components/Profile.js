@@ -17,7 +17,9 @@ function Profile(props) {
   const socket = useContext(SocketContext);
 
   async function fetchPosts(user_id) {
-    await fetch(`${process.env. REACT_APP_API_URL}/user/${user_id}/posts`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${user_id}/posts`,{
+      mode: "cors",
+    })
       .then((res) => {
         return res.json();
       })
@@ -28,7 +30,9 @@ function Profile(props) {
 
   useEffect(() => {
     async function fetchUser() {
-      await fetch(`${process.env. REACT_APP_API_URL}/user/${params.id}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/user/${params.id}`,{
+        mode: "cors",
+      })
         .then((res) => {
           return res.json();
         })
@@ -67,6 +71,7 @@ function Profile(props) {
       `${process.env. REACT_APP_API_URL}/user/${params.id}/friend-request?user_id=${props.user._id}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
     setRequestPending(true)
@@ -78,6 +83,7 @@ function Profile(props) {
       `${process.env. REACT_APP_API_URL}/user/${props.user._id}/friend-request/resolve?user_id=${params.id}&accept=${accept}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
     setRequestPending(false)

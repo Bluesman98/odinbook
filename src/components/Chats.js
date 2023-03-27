@@ -1,32 +1,33 @@
 import Chat from "./Chat";
 import "../styles/Chats.css";
-import {SocketContext} from './socket';
+import { SocketContext } from "./socket";
 import { useContext, useEffect } from "react";
 
 function Chats(props) {
-
   const socket = useContext(SocketContext);
 
   const joinRoom = (room) => {
     socket.emit("join_room", room);
-  
-};
+  };
 
   async function joinRooms() {
     try {
       await fetch(
-        `${process.env. REACT_APP_API_URL}/user/${props.user._id}/chats`
+        `${process.env.REACT_APP_API_URL}/user/${props.user._id}/chats`,
+        {
+          mode: "cors",
+        }
       )
         .then((res) => {
           return res.json();
         })
         .then((data) => {
-          data.map((item)=>{
-          joinRoom(item._id)
-          })
+          data.map((item) => {
+            joinRoom(item._id);
+          });
         });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -39,8 +40,8 @@ function Chats(props) {
   }
 
   useEffect(() => {
-    if(props.user)joinRooms()
-  },[props.user]);
+    if (props.user) joinRooms();
+  }, [props.user]);
 
   return (
     <div className="Chats">
@@ -55,7 +56,8 @@ function Chats(props) {
                 user={props.user}
               />
             );
-          })          .slice(-3)
+          })
+          .slice(-3)
           .reverse()}
     </div>
   );

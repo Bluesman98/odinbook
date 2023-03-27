@@ -27,7 +27,9 @@ function Chat(props) {
 
   async function fetchChat() {
     try {
-      await fetch(`${process.env. REACT_APP_API_URL}/chat/${props.data.chat_id}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/chat/${props.data.chat_id}`,{
+        mode: "cors",
+      })
         .then((res) => {
           return res.json();
         })
@@ -45,6 +47,7 @@ function Chat(props) {
       `${process.env. REACT_APP_API_URL}/chat/${chat._id}/message?author=${props.user._id}`,
       {
         method: "POST",
+        mode: "cors",
         body: JSON.stringify({
           text: text,
         }),
@@ -65,6 +68,7 @@ function Chat(props) {
       `${process.env. REACT_APP_API_URL}/chat/${props.data.chat_id}/message/${msg_id}/read?user_id=${props.user._id}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     )
   } 

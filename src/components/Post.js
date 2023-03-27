@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import Comment from "../components/Comment";
 import "../styles/Post.css";
-import { useNavigate } from "react-router-dom";
 import CreateComment from "./CreateComment";
+import { Link } from "react-router-dom";
 
 function Post(props) {
   const [comments, setComments] = useState(null);
@@ -17,7 +17,9 @@ function Post(props) {
   const [isLiked, setIsLiked] = useState(false);
 
   async function fetchComments() {
-    await fetch(`${process.env. REACT_APP_API_URL}/post/${props.post._id}/comments`)
+    await fetch(`${process.env. REACT_APP_API_URL}/post/${props.post._id}/comments`,{
+      mode: "cors",
+    })
       .then((res) => {
         return res.json();
       })
@@ -27,7 +29,9 @@ function Post(props) {
   }
 
   async function fetchAuthor() {
-    await fetch(`${process.env. REACT_APP_API_URL}/user/${props.post.author_id}/details`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${props.post.author_id}/details`,{
+      mode: "cors",
+    })
       .then((res) => {
         return res.json();
       })
@@ -41,6 +45,7 @@ function Post(props) {
       `${process.env. REACT_APP_API_URL}/post/${props.post._id}/like?user_id=${props.user._id}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
   }
@@ -50,6 +55,7 @@ function Post(props) {
       `${process.env. REACT_APP_API_URL}/post/${props.post._id}/like-remove?user_id=${props.user._id}`,
       {
         method: "PUT",
+        mode: "cors",
       }
     );
   }
@@ -69,10 +75,10 @@ function Post(props) {
     <div className="Post">
       <div>
         {author && (
-          <div className="author">
+          <Link className="author" to={`/user/${author._id}/profile`} >
             <img className="profile-img" src={author.img_url}></img>
             <div> {author.first_name + " " + author.last_name} </div>
-          </div>
+          </Link>
         )}
         <div className="date">
           {props.post.author_id === props.user._id && (

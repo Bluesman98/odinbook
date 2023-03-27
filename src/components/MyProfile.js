@@ -49,7 +49,9 @@ function MyProfile(props) {
   }
 
   async function fetchPosts(user_id) {
-    await fetch(`${process.env. REACT_APP_API_URL}/user/${user_id}/posts`)
+    await fetch(`${process.env. REACT_APP_API_URL}/user/${user_id}/posts`,{
+      mode: "cors",
+    })
       .then((res) => {
         return res.json();
       })
@@ -63,6 +65,7 @@ function MyProfile(props) {
         `${process.env. REACT_APP_API_URL}/user/${user_id}/img_url/update?img_url=${imgUrl}`,
         {
           method: "PUT",
+          mode: "cors",
         }
       ).then((data) => {
         props.setUpdateUser(true);
@@ -79,7 +82,9 @@ function MyProfile(props) {
 
   useEffect(() => {
     async function fetchUser() {
-      await fetch(`${process.env. REACT_APP_API_URL}/user/${params.id}`)
+      await fetch(`${process.env. REACT_APP_API_URL}/user/${params.id}`,{
+        mode: "cors",
+      })
         .then((res) => {
           return res.json();
         })
