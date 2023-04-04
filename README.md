@@ -1,0 +1,3 @@
+API repository --> https://github.com/Bluesman98/odinbook-api/settings
+
+to login with facebook disable Ad block because it blocks the popup login window... 
